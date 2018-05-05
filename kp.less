@@ -1,0 +1,140 @@
+@import "node_modules/uikit/src/less/uikit.theme.less";
+@import url('https://fonts.googleapis.com/css?family=Cantarell:400,700|Fjalla+One');
+
+@global-font-family: "Cantrell", Roboto, "Helvetica Neue", Arial, sans-serif;
+@global-muted-background: #f8f8f8;
+@global-primary-background: #3E5C76;
+@global-secondary-background: #151515;
+@card-default-background: #F5F5F5;
+@card-muted-background: #fd8a5e;
+@card-primary-background: #00bfaf;
+@card-primary-hover-background: @card-primary-background;
+@card-secondary-background: #830562;
+@card-secondary-hover-background: @card-secondary-background;
+@global-success-background:                    #829F9D;
+@global-warning-background:                     #455052;
+@global-danger-background:                      #FB6A64;
+
+.kp-primary-bg{
+    background-image:url('/assets/images/flora-small.jpg');
+}
+@media screen and (min-width: @breakpoint-medium){
+    .kp-primary-bg{
+        background-image:url('/assets/images/flora-medium.jpg');
+    }
+}
+@media screen and (min-width: @breakpoint-large){
+    .kp-primary-bg{
+        background-image:url('/assets/images/flora-large.jpg');
+    }
+}
+@media screen and (min-width: @breakpoint-xlarge){
+    .kp-primary-bg{
+        background-image:url('/assets/images/flora.jpg');
+    }
+}
+
+.hover-rotate:hover {
+    transform-origin: center;
+    transform: rotate(360deg);
+    -webkit-transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -o-transition: 3s ease-in;
+    transition: 3s ease-in;
+    cursor: crosshair;
+}
+.strike {
+    text-decoration: line-through;
+}
+.uk-nav li > a.meta-link{
+    display: inline;
+}
+
+.hook-text-lead{
+    font-family: "Fjalla One";
+}
+
+.uk-card-body .uk-button-text{
+    font-family: "Fjalla One";
+    text-transform: none;
+    font-weight: lighter;
+}
+
+.uk-overlay-default {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.uk-card-muted {
+    background: @card-muted-background;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    & .uk-text-meta{
+        color: #333;
+    }
+}
+.uk-card-default {
+    & .uk-text-meta{
+        color: #333;
+    }
+}
+.uk-card-primary {
+    & .uk-text-meta{
+        color: #eee;
+    }
+}
+.uk-card-secondary {
+    & .uk-text-meta{
+        color: #eee;
+    }
+}
+
+@keyframes happyegg{
+    0% {transform: translateY(0px);}
+    25%{transform: translateY(50px);}
+    50%{transform: translateY(0px);}
+    75%{transform: translateY(-50px);}
+    100%{transform: translateY(0px);}
+}
+@keyframes highlighter{
+    0% {color:#999;}
+    25%{color:#830562;;}
+    50%{color:#999;}
+    75%{color:#999}
+    100%{color:#999;}
+}
+
+.happyegg,
+.meta-link{
+    animation-delay: 60s;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.happyegg {
+    animation-name:happyegg;
+}
+.meta-link{
+    animation-name:highlighter;
+}
+
+.yardi-gradient{
+    background: #00467f;
+    background: linear-gradient(70deg, #0f375b 0%, #00467f 10%, #00bdff 75%);
+/*     background: -moz-linear-gradient(70deg, #0f375b 0%, #00467f 10%, #00bdff 75%);
+    background: -webkit-linear-gradient(70deg, #0f375b 0%, #00467f 10%, #00bdff 75%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0f375b', endColorstr='#00bdff', GradientType=1); */
+}
+
+.kp-posttail-right{
+    &::before{
+        content: '````````';
+
+    }
+
+}
+.kp-posttail-left{
+    &::after{
+        content: '````````';
+
+    }
+
+}

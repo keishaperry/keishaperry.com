@@ -1,0 +1,102 @@
+--- 
+layout: default 
+---
+<div class="uk-container-expand uk-background-norepeat uk-background-cover uk-background-center-center uk-background-fixed kp-primary-bg">
+    <button class="uk-icon-button uk-position-absolute uk-position-medium uk-position-top-left uk-position-z-index uk-hidden@m"
+        type="button" uk-toggle="target: #offcanvas-reveal" uk-icon="icon: menu"></button>
+    <div class="uk-grid uk-grid-collapse uk-flex-center">
+        <div class="uk-width-1-1 uk-width-1-5@m uk-first-column uk-remove-margin uk-first-column uk-height-viewport uk-background-default">
+            {%- include center.html -%}
+        </div>
+        <div class="uk-width-1-1 uk-width-2-5@m uk-flex-first@m">
+            <div class="">
+                <div class="uk-child-width-1-1@m uk-grid-match uk-grid" uk-grid="">
+
+                    <div class="uk-first-column uk-invisible uk-height-small"></div>
+                    {% assign items = site.cards | sort: 'order' %} {% for post in items %} {% if post.categories contains "left" %}
+
+                    <div uk-scrollspy="cls: uk-animation-slide-right;hidden:true; repeat: {{post.repeat}}">
+                        <div class="uk-card uk-card-{{post.ccode}} uk-card-{{post.size}} uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                            {% if post.categories contains "blog" %}
+                            <span class="uk-position-right uk-width-small uk-width-1-1 uk-align-right uk-light" style="margin-top:-30px;margin-right:-28px;">
+                                <span class="kp-posttail-left">{{post.date_string}}</span>
+                            </span>
+                            {% endif %}
+                            <div>
+                                <div class="uk-card-body uk-flex uk-flex-middle">
+                                    <div>
+                                        <h3 class="uk-card-title uk-text-lead uk-text-lowercase">{{post.title}}</h3>
+                                        <p class="uk-text-meta">{{post.desc}}</p>
+                                        <p uk-margin>
+                                            <a href="{{post.link}}" class="uk-button uk-button-text">{{post.cta}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-media-right uk-cover-container">
+                                <img src="/assets/images/{{post.img}}" data-src="/assets/images/{{post.img}}" alt="" uk-cover>
+                                <canvas width="600" height="400"></canvas>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    {% if post.categories contains "small-gap" %}
+                    <div class="uk-first-column uk-invisible uk-height-small"></div>
+                    {% endif %} {% if post.categories contains "large-gap" %}
+                    <div class="uk-first-column uk-invisible uk-height-large"></div>
+                    {% endif %} {% endif %} {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="uk-width-1-1 uk-width-2-5@m">
+            <div class="">
+                <div class="uk-child-width-1-1@m uk-grid-match uk-grid" uk-grid="">
+                    {% for post in items %} {% if post.categories contains "right" %}
+
+                    <div uk-scrollspy="cls: uk-animation-slide-left;hidden:true; repeat: {{post.repeat}}">
+                        <div class="uk-card uk-card-{{post.ccode}} uk-card-{{post.size}} uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                            {% if post.categories contains "blog" %}
+                            <span class="uk-position-left uk-width-small uk-width-1-1 uk-align-left uk-light" style="margin-top:-30px;margin-right:-10px;">
+                                <span class="kp-posttail-right">{{ post.date_string }}</span>
+                            </span>
+                            {% endif %}
+                            <div class="uk-card-media-right uk-cover-container">
+                                <img src="/assets/images/{{post.img}}" data-src="/assets/images/{{post.img}}" alt="" uk-cover>
+                                <canvas width="600" height="400"></canvas>
+                            </div>
+                            <div>
+                                <div class="uk-card-body uk-flex uk-flex-middle">
+                                    <div>
+                                        <h3 class="uk-card-title uk-text-lead uk-text-lowercase">{{post.title}}</h3>
+                                        <p class="uk-text-meta">{{post.desc}}</p>
+                                        <p uk-margin>
+                                            <a href="{{post.link}}" class="uk-button uk-button-text">{{post.cta}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    {% if post.categories contains "small-gap" %}
+                    <div class="uk-first-column uk-invisible uk-height-small"></div>
+                    {% endif %} {% if post.categories contains "large-gap" %}
+                    <div class="uk-first-column uk-invisible uk-height-large"></div>
+                    {% endif %} {% endif %} {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("img").unveil();
+    });
+</script>
