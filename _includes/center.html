@@ -9,35 +9,24 @@
             <li class="uk-parent">
                 <a href="#">projects</a>
                 <ul class="uk-nav-sub" hidden="" aria-hidden="true">
-                    <li>
-                        <a href="#">Sub item</a>
-                    </li>
-                    <li>
-                        <a href="#">Sub item</a>
-                    </li>
+                {% assign menu_projects = site.cards | where: 'categories', 'project' | sort: 'order' %}
+                {% for item in menu_projects limit:5 %}
+                    <li><a href="{{ item.link }}" alt="{{ item.menu_slug }}">{{ item.menu_slug }}</a></li>
+                {% endfor %}
+                    <li><a href="{{ "/projects" | absolute_url }}" alt="see all projects">...more</a></li>
                 </ul>
             </li>
             <li class="uk-parent">
                 <a href="#">archive</a>
                 <ul class="uk-nav-sub" hidden="" aria-hidden="true">
-                    <li>
-                        <a href="#">Sub item</a>
-                    </li>
-                    <li>
-                        <a href="#">Sub item</a>
-                        <ul>
-                            <li>
-                                <a href="#">Sub item</a>
-                            </li>
-                            <li>
-                                <a href="#">Sub item</a>
-                            </li>
-                        </ul>
-                    </li>
+                {% assign menu_posts = site.cards |where: 'categories', 'blog'  | sort: 'order' %}
+                {% for item in menu_posts limit:5 %}
+                    <li><a href="{{ item.link }}" alt="{{ item.menu_slug }}">{{ item.menu_slug }}</a></li>
+                {% endfor %}
+                    <li><a href="{{ "/posts" | absolute_url }}" alt="see all posts">...more</a></li>
                 </ul>
             </li>
             <div class="uk-margin-large"></div>
-            <!-- <li class="uk-nav-header uk-text-lowercase">online</li> -->
             <ul class="uk-iconnav uk-flex uk-flex-center ">
                 <li class="uk-display-inline hover-rotate">
                     <a href="#">
@@ -57,7 +46,7 @@
             </ul>
             <li class="uk-nav-divider uk-margin-large"></li>
             <li>
-                keisha perry - developer
+                keisha perry, developer
                 <br>santa barbara, ca
                 <br>
                 <span class="uk-padding-large happyegg" uk-icon="icon: happy"></span>

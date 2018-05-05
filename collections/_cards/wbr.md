@@ -12,4 +12,5 @@ img: "pink-chick.jpg"
 imgbgcode: ""  
 repeat: "true"
 order: 1
+menu_slug: whole beast rag
 ---

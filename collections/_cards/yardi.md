@@ -12,4 +12,5 @@ imgtype: ""
 imgbgcode: ""
 repeat: "false"
 order: 2
+menu_slug: yardi
 ---

@@ -11,4 +11,5 @@ imgbgcode: ""
 side: "right"
 repeat: "true"
 order: 4
+menu_slug: scrolljacking blog
 ---
