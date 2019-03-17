@@ -2,7 +2,7 @@
 title:  "fertilize your brain" 
 categories: left project 
 side: "right"
-link: "http://wbr.keishaperry.com"  
+link: "http://www.wholebeastrag.com"  
 size: "default"  
 type: "project"  
 ccode: "secondary"  
