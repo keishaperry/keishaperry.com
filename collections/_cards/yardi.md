@@ -5,7 +5,7 @@ link: /projects/yardi
 size: "large"
 type: "project"
 ccode: "default"
-desc: "#CUBELYFE<br>grinding IRL dailies in marketing @yardisystems"
+desc: "#CUBELYFE<br>grinding IRL dailies @yardisystems"
 cta: "ENERGIZED FOR TOMORROW"
 img: "stock3.png"
 imgtype: ""
