@@ -1,6 +1,6 @@
 ---
 title:  "fertilize your brain" 
-categories: left project 
+categories: left project small-gap
 side: "right"
 link: "http://www.wholebeastrag.com"  
 size: "default"  
