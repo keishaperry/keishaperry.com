@@ -2,10 +2,13 @@
 layout: default 
 ---
 <div class="uk-container-expand uk-background-norepeat uk-background-cover uk-background-center-center uk-background-fixed kp-primary-bg">
-    <button class="uk-icon-button uk-position-absolute uk-position-medium uk-position-top-left uk-position-z-index uk-hidden@m"
-        type="button" uk-toggle="target: #offcanvas-reveal" uk-icon="icon: menu"></button>
     <div class="uk-grid uk-grid-collapse uk-flex-center">
-        <div class="uk-width-1-1 uk-width-1-5@m uk-first-column uk-remove-margin uk-first-column uk-height-viewport uk-background-default">
+        <div class="uk-hidden@m uk-width-1-1">
+                <a href="{{ "/" | absolute_url }}" class="uk-position-absolute uk-position-top-left uk-position-small uk-position-z-index">
+                    <img style="height:50px;width:auto;" src="{{ "/assets/images/logo-icon-w.png" | relative_url }}" >
+                </a>
+        </div>
+        <div class="uk-visible@m uk-width-1-1 uk-width-1-5@m uk-first-column uk-remove-margin uk-first-column uk-height-viewport uk-background-default">
             {%- include center.html -%}
         </div>
         <div class="uk-width-1-1 uk-width-2-5@m uk-flex-first@m">
@@ -23,14 +26,12 @@ layout: default
                             </span>
                             {% endif %}
                             <div>
-                                <div class="uk-card-body uk-flex uk-flex-middle">
-                                    <div>
+                                <div class="uk-card-body uk-flex uk-flex-column uk-flex-middle uk-child-width-1-1">
                                         <h3 class="uk-card-title uk-text-lead uk-text-lowercase">{{post.title}}</h3>
                                         <p class="uk-text-meta">{{post.desc}}</p>
                                         <p uk-margin>
                                             <a href="{{post.link}}" class="uk-button uk-button-text">{{post.cta}}</a>
                                         </p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="uk-card-media-right uk-cover-container">
@@ -67,14 +68,12 @@ layout: default
                                 <canvas width="600" height="400"></canvas>
                             </div>
                             <div>
-                                <div class="uk-card-body uk-flex uk-flex-middle">
-                                    <div>
+                                <div class="uk-card-body uk-flex uk-flex-column uk-flex-middle uk-child-width-1-1">
                                         <h3 class="uk-card-title uk-text-lead uk-text-lowercase">{{post.title}}</h3>
                                         <p class="uk-text-meta">{{post.desc}}</p>
                                         <p uk-margin>
                                             <a href="{{post.link}}" class="uk-button uk-button-text">{{post.cta}}</a>
                                         </p>
-                                    </div>
                                 </div>
                             </div>
 
