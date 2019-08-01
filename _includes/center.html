@@ -1,45 +1,26 @@
 <div class="uk-padding-small uk-padding-remove-bottom uk-height-viewport uk-background-default" uk-sticky="offset: 0; bottom: #viewport;media: @m;"
     uk-height-viewport="expand: true">
     <div class="uk-flex uk-flex-center">
-        <img class="uk-height-small" src="{{ "/assets/images/logo.png" | relative_url }}" style="padding-left:20px;">
+        <a href="{{ "/" | absolute_url }}">
+            <img class="uk-height-small" src="{{ "/assets/images/logo.png" | relative_url }}" style="padding-left:20px;">
+        </a>
     </div>
     <div class="uk-text-center uk-margin-large uk-height-expand uk-visible@m">
         <ul class="uk-nav-default uk-nav-center uk-nav-parent-icon uk-nav" uk-nav="">
-
-           <!--  <li class="uk-parent">
-                <a href="#">projects</a>
-                <ul class="uk-nav-sub" hidden="" aria-hidden="true">
-                {% assign menu_projects = site.cards | where: 'categories', 'project' | sort: 'order' %}
-                {% for item in menu_projects limit:5 %}
-                    <li><a href="{{ item.link }}" alt="{{ item.menu_slug }}">{{ item.menu_slug }}</a></li>
-                {% endfor %}
-                    <li><a href="{{ "/projects" | absolute_url }}" alt="see all projects">...more</a></li>
-                </ul>
-            </li>
-            <li class="uk-parent">
-                <a href="#">archive</a>
-                <ul class="uk-nav-sub" hidden="" aria-hidden="true">
-                {% assign menu_posts = site.cards |where: 'categories', 'blog'  | sort: 'order' %}
-                {% for item in menu_posts limit:5 %}
-                    <li><a href="{{ item.link }}" alt="{{ item.menu_slug }}">{{ item.menu_slug }}</a></li>
-                {% endfor %}
-                    <li><a href="{{ "/posts" | absolute_url }}" alt="see all posts">...more</a></li>
-                </ul>
-            </li> -->
             <div class="uk-height-small"></div>
             <ul class="uk-iconnav uk-flex uk-flex-center ">
                 <li class="uk-display-inline hover-rotate">
-                    <a href="#">
+                    <a href="{{'/archive' | absolute_url }}">
                         <span class="uk-margin-small-right uk-icon " uk-icon="icon: list"></span>
                     </a>
                 </li>
                 <li class="uk-display-inline hover-rotate">
-                    <a href="#">
+                    <a href="https://github.com/keishaperry" target="_blank">
                         <span class="uk-margin-small-right uk-icon " uk-icon="icon: github-alt"></span>
                     </a>
                 </li>
                 <li class="uk-display-inline hover-rotate">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/feed/" target="_blank">
                         <span class="uk-margin-small-right uk-icon " uk-icon="icon: linkedin"></span>
                     </a>
                 </li>

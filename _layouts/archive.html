@@ -1,0 +1,53 @@
+--- 
+layout: default 
+---
+<div class="uk-container-expand uk-background-norepeat uk-background-cover uk-background-center-center uk-background-fixed kp-primary-bg">
+    <button class="uk-icon-button uk-position-absolute uk-position-medium uk-position-top-left uk-position-z-index uk-hidden@m"
+        type="button" uk-toggle="target: #offcanvas-reveal" uk-icon="icon: menu"></button>
+    <div class="uk-grid uk-grid-collapse uk-flex-center">
+        <div class="uk-width-1-1 uk-width-1-5@m uk-first-column uk-remove-margin uk-first-column uk-height-viewport uk-background-default">
+            {%- include center.html -%}
+        </div>
+        <div class="uk-width-1-1 uk-width-2-5@m">
+                {% assign items = site.cards | sort: 'order' %}
+                <div class="uk-child-width-1-1@m uk-grid-match uk-grid" uk-grid="">
+                    {% for post in items %}
+
+                    <div uk-scrollspy="cls: uk-animation-slide-left;hidden:true; repeat: {{post.repeat}}">
+                        <div class="uk-card uk-card-{{post.ccode}} uk-card-{{post.size}} uk-grid-collapse uk-margin" uk-grid>
+                            {% if post.categories contains "blog" %}
+                            <span class="uk-position-left uk-width-small uk-width-1-1 uk-align-left uk-light" style="margin-top:-30px;margin-right:-10px;">
+                                <span class="kp-posttail-right">{{ post.date_string }}</span>
+                            </span>
+                            {% endif %}
+
+                            <div>
+                                <div class="uk-card-body uk-flex uk-flex-middle">
+                                    <div>
+                                        <h3 class="uk-card-title uk-text-lead uk-text-lowercase">{{post.title}}</h3>
+                                        <p class="uk-text-meta">{{post.desc}}</p>
+                                        <p uk-margin>
+                                            <a href="{{post.link}}" class="uk-button uk-button-text">{{post.cta}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("img").unveil();
+    });
+</script>
